@@ -1,0 +1,39 @@
+Brown v. Board of Education (1954):
+Background: This case challenged the practice of racial segregation in public schools, where Black students were forced to attend separate, often inferior, schools solely based on their race.
+Outcome: The Supreme Court, in a unanimous decision, declared that state laws establishing separate public schools for Black and white students were unconstitutional. This decision overturned the earlier "separate but equal" doctrine established in Plessy v. Ferguson and marked a significant victory for the civil rights movement.
+
+Dred Scott v. Sandford (1857):
+Background: Dred Scott, an enslaved man, sued for his freedom after living in free states and territories. The case questioned whether enslaved individuals had any legal rights as citizens.
+Outcome: The Supreme Court, in a 7-2 decision, ruled that enslaved individuals were not considered citizens and had no legal standing to sue in federal courts. Furthermore, the Court declared that Congress did not have the authority to prohibit slavery in U.S. territories, effectively exacerbating tensions between pro-slavery and anti-slavery factions in the lead-up to the Civil War.
+
+Plessy v. Ferguson (1896):
+Background: This case revolved around racial segregation in public transportation, where Homer Plessy, a mixed-race man, refused to sit in a segregated train car designated for Black passengers.
+Outcome: The Supreme Court upheld the Louisiana law requiring "separate but equal" accommodations for Black and white passengers, establishing the legal doctrine of racial segregation. This decision was later overturned by Brown v. Board of Education in 1954.
+
+Gideon v. Wainwright (1963):
+Background: Clarence Gideon, an indigent defendant, was denied an attorney in a Florida state court, prompting his appeal to the U.S. Supreme Court.
+Outcome: The Supreme Court unanimously ruled that the Sixth Amendment guarantees the right to legal counsel for defendants in criminal cases, even if they cannot afford an attorney. This decision established the principle that everyone has the right to legal representation when facing criminal charges.
+
+New York Times Co. v. Sullivan (1964):
+Background: The New York Times published an advertisement critical of the actions of officials in Montgomery, Alabama, leading to a defamation lawsuit filed by a local police commissioner, L.B. Sullivan.
+Outcome: The Supreme Court ruled that public officials must prove "actual malice" (knowingly false or reckless disregard for the truth) to succeed in a defamation lawsuit against a media organization. This decision strengthened the First Amendment protections for free speech and press.
+
+Roe v. Wade (1973):
+Background: This case addressed the legality of abortion restrictions in Texas and set the stage for a nationwide debate on a woman's right to choose abortion.
+Outcome: The Supreme Court, in a 7-2 decision, ruled that a woman has the constitutional right to choose to have an abortion under the privacy rights protected by the Fourteenth Amendment. This decision has been central to discussions about reproductive rights in the United States.
+
+United States v. Nixon (1974):
+Background: During the Watergate scandal, President Richard Nixon refused to release audio recordings and documents subpoenaed by the special prosecutor, claiming executive privilege.
+Outcome: The Supreme Court unanimously ruled that executive privilege is not absolute and ordered the president to turn over the tapes and documents. This decision played a significant role in the Watergate investigation and led to President Nixon's resignation.
+
+Miranda v. Arizona (1966):
+Background: Ernesto Miranda was arrested and confessed to a crime during police questioning without being informed of his right to remain silent and have an attorney present.
+Outcome: The Supreme Court ruled that statements made by a suspect during custodial interrogation are admissible only if the suspect has been informed of their rights, known as the "Miranda warning." This case established the requirement for law enforcement to inform arrested individuals of their rights.
+
+Obergefell v. Hodges (2015):
+Background: This case addressed the issue of same-sex marriage bans in several states, leading to a broader debate on marriage equality.
+Outcome: The Supreme Court ruled in a 5-4 decision that state bans on same-sex marriage were unconstitutional, effectively legalizing same-sex marriage nationwide. This decision was a significant milestone in the fight for LGBTQ+ rights.
+
+Bush v. Gore (2000):
+Background: The 2000 presidential election between George W. Bush and Al Gore was extremely close and contentious in Florida, prompting a recount.
+Outcome: The Supreme Court ruled 5-4 to halt the recount in Florida, effectively deciding the election in favor of George W. Bush. This decision was criticized by some as politically motivated but effectively ended the election dispute.
