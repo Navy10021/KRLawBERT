@@ -36,6 +36,7 @@ class MLMPretrainingDataset(Dataset):
     def __init__(self, text_data, tokenizer):
         self.text_data = text_data
         self.tokenizer = tokenizer
+        self.max_length = self.find_max_len()
 
     def __len__(self):
         return len(self.text_data)
@@ -56,6 +57,15 @@ class MLMPretrainingDataset(Dataset):
         masked_tokens, labels = self.mask_tokens(tokens)
         
         return torch.tensor(masked_tokens), torch.tensor(labels)
+
+    
+    def find_max_len(self):
+        # Find max length
+        tokenized_text_data = [self.tokenizer.encode(text, add_special_tokens=True) for text in self.text_data]
+        max_length = max(len(tokens) for tokens in tokenized_text_data)
+        print("Text max length : {}".format(max_length))
+        
+        return max_length
 
     def mask_tokens(self, tokens):
         probability_matrix = torch.full((len(tokens),), 0.20)  # 20% chance of masking(Original BERT : 15%)
