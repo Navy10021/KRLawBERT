@@ -58,7 +58,7 @@ class FrequencyMLMPretrainingDataset(Dataset):
 
         # Tokenize the text and Padding
         tokens = self.tokenizer.encode(text, add_special_tokens=True)
-        tokens = tokens + [tokenizer.pad_token_id] * (max_length - len(tokens))
+        tokens = tokens + [tokenizer.pad_token_id] * (self.max_length - len(tokens))
 
         # Create masked input and labels for MLM
         masked_tokens, labels = self.mask_tokens(tokens)
