@@ -43,37 +43,41 @@ model_name = 'bert-base-uncased'
 tokenizer = BertTokenizer.from_pretrained(model_name)
 model = BertForMaskedLM.from_pretrained(model_name)
 
-# 3. Statistical MLM
+# 3. Frequncy MLM
 class FrequencyMLMPretrainingDataset(Dataset):
     def __init__(self, text_data, tokenizer):
         self.text_data = text_data
         self.tokenizer = tokenizer
+        self.max_length = self.find_max_len()
 
     def __len__(self):
         return len(self.text_data)
 
     def __getitem__(self, idx):
         text = self.text_data[idx]
-        
-        # Find max length
-        tokenized_text_data = [self.tokenizer.encode(text, add_special_tokens=True) for text in self.text_data]
-        max_length = max(len(tokens) for tokens in tokenized_text_data)
-        #print("Text max length : {}".format(max_length))
 
         # Tokenize the text and Padding
         tokens = self.tokenizer.encode(text, add_special_tokens=True)
         tokens = tokens + [tokenizer.pad_token_id] * (max_length - len(tokens))
-        
+
         # Create masked input and labels for MLM
         masked_tokens, labels = self.mask_tokens(tokens)
-        
+
         return torch.tensor(masked_tokens), torch.tensor(labels)
+
+    def find_max_len(self):
+        # Find max length
+        tokenized_text_data = [self.tokenizer.encode(text, add_special_tokens=True) for text in self.text_data]
+        max_length = max(len(tokens) for tokens in tokenized_text_data)
+        print("Text max length : {}".format(max_length))
+        
+        return max_length
 
     def mask_tokens(self, tokens):
         # Advanced masking strategy: Mask tokens based on token frequency
         masked_tokens = torch.tensor(tokens)
         labels = torch.tensor(tokens)
-        
+
         # Determine token frequencies in the input
         token_counts = {}
         for token in tokens:
@@ -81,19 +85,19 @@ class FrequencyMLMPretrainingDataset(Dataset):
                 token_counts[token] += 1
             else:
                 token_counts[token] = 1
-        
+
         # Sort tokens by frequency (less frequent tokens first)
         sorted_tokens = sorted(token_counts.keys(), key=lambda x: token_counts[x])
 
-        # Mask a portion of less frequent tokens (e.g., bottom 15%)
-        mask_percentage = 0.15
+        # Mask a portion of less frequent tokens (e.g., bottom 10%)
+        mask_percentage = 0.1
         num_tokens_to_mask = int(len(sorted_tokens) * mask_percentage)
 
         for i in range(num_tokens_to_mask):
             token_to_mask = sorted_tokens[i]
             masked_tokens[masked_tokens == token_to_mask] = self.tokenizer.mask_token_id
             labels[labels == token_to_mask] = -100  # Only compute loss on masked tokens
-        
+
         return masked_tokens, labels
 
 # 4. Create a DataLoader for batch training
