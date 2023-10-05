@@ -183,7 +183,7 @@ model.fit(
     train_objectives=[(loader, loss)],
     epochs = epochs,
     warmup_steps = warmup_steps,
-    checkpoint_path = './output/tsdae-bert',
+    checkpoint_path = './models/tsdae_trained_model',
     checkpoint_save_steps= 3000,
     weight_decay = 0,
     scheduler = 'constantlr',
@@ -191,4 +191,4 @@ model.fit(
     show_progress_bar = True
 )
 # Save final model
-model.save('model/tsdae_trained_model')
+model.save('./models/tsdae_trained_model')
