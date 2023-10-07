@@ -19,8 +19,8 @@ print(">> Using {}".format(device))
 ################################
 from models.kor_sentence_bert import *
 # 1-1. Load pre-trained or re-trained KoLawBERT
-model_name = ./models/tsdae_trained_model
-token_name = "klue/bert-base"    # Kor : "klue/bert-base" Eng : "bert-base"
+model_name = './models/tsdae_trained_model'    # or 'mlm_trained_model' or 'dynamic_mlm_trained_model' or 'freq_mlm_trained_model'
+token_name = 'klue/bert-base'    # if Kor : 'klue/bert-base'   else if Eng : 'bert-base-uncased'
 model = make_sentenceBERT(model_name, token_name)
 
 # 1-2. If load re-trained KRLawBERT / TSDAE / Huggingface PLMs
@@ -72,7 +72,7 @@ num_epochs = 3
 warmup_steps = math.ceil(len(train_dataset) * num_epochs / train_batch_size * 0.1)   
 logging.info("Warmup-steps: {}".format(warmup_steps))
 
-model_save_path = 'output/nil_krlawbert'
+model_save_path = 'models/nil_krlawbert'
 
 model.fit(train_objectives=[(train_dataloader, train_loss)],
           evaluator=dev_evaluator,
@@ -91,8 +91,8 @@ print(">> Best TEST Score is : {:.4f}".format(test_evaluator(model, output_path=
 ########################################
 ### 3. Fine-Tuning on KorSTS Dataset ###
 ########################################
-model_name = 'output/nil_krlawbert'
-model_save_path = 'output/mlm_krlawbert'
+model_name = 'models/nil_krlawbert'
+model_save_path = 'models/krlawbert'
 model = SentenceTransformer(model_name)
 
 # 3-1. Make STS Dataset for Training
