@@ -9,6 +9,7 @@ import torch
 import torch.optim as optim
 from torch.utils.data import Dataset, DataLoader
 from transformers import BertForMaskedLM, BertTokenizer
+import matplotlib.pyplot as plt
 
 
 # 1. Read text file and sentence tokenization  
