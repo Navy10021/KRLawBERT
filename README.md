@@ -10,11 +10,22 @@
 
 
 ### 2. Model Usage
-#### 2-1. Pre-train
+#### Pre-train
+Our model is pre-trained using four masking techniques: Statistical MLM, Dynamic MLM, Frequency MLM, and TSDAE.
 
-#### 2-2. Re-train
+#### 1. Statistical Masked Language Model
 
-#### 2-3. Fine-tuning
+#### 2. Dynamic Masked Language Model
+
+#### 3. Frequency-based Masked Language Model
+
+#### 4. Transformer-based Sequential Denosing Auto-Encoder
+
+#### Fine-tuning
+
+#### 1. NIL
+
+#### 2. STS
 
 
 ### 3. Dev
