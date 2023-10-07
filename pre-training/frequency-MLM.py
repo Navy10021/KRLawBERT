@@ -11,6 +11,7 @@ import torch
 import torch.optim as optim
 from torch.utils.data import Dataset, DataLoader
 from transformers import BertForMaskedLM, BertTokenizer
+import matplotlib.pyplot as plt
 
 
 # 1. Read text file and sentence tokenization  
@@ -27,16 +28,6 @@ text_data = read_and_tokenize(file_path)
 # print 5 sentences
 for i, sent in enumerate(text_data[:5]):
     print(sent)
-
-# 2. Initialize a BERT tokenizer and model 
-model_name = 'bert-base-uncased'
-tokenizer = BertTokenizer.from_pretrained(model_name)
-model = BertForMaskedLM.from_pretrained(model_name)
-
-import torch
-import torch.optim as optim
-from torch.utils.data import Dataset, DataLoader
-from transformers import BertForMaskedLM, BertTokenizer
 
 # 2. Initialize a BERT tokenizer and model 
 model_name = 'bert-base-uncased'
@@ -70,7 +61,7 @@ class FrequencyMLMPretrainingDataset(Dataset):
         tokenized_text_data = [self.tokenizer.encode(text, add_special_tokens=True) for text in self.text_data]
         max_length = max(len(tokens) for tokens in tokenized_text_data)
         print("Text max length : {}".format(max_length))
-        
+
         return max_length
 
     def mask_tokens(self, tokens):
@@ -100,6 +91,7 @@ class FrequencyMLMPretrainingDataset(Dataset):
 
         return masked_tokens, labels
 
+
 # 4. Create a DataLoader for batch training
 dataset = FrequencyMLMPretrainingDataset(text_data, tokenizer)
 dataloader = DataLoader(dataset, batch_size=8, shuffle=True)
@@ -111,6 +103,7 @@ optimizer = optim.Adam(model.parameters(), lr=1e-5)
 # 6. Training loop
 epochs = 10
 best_loss = float('inf')  # Initialize the best_loss with positive infinity
+loss_values_3 = list()
 model.train()
 for epoch in range(epochs):
     for batch_masked_tokens, batch_labels in dataloader:
@@ -119,10 +112,24 @@ for epoch in range(epochs):
         loss = outputs.loss
         loss.backward()
         optimizer.step()
-    
+
+    loss_values_3.append(loss.item())
     print(f"Epoch {epoch + 1}/{epochs} - Loss : {loss.item()}")
 
     if loss < best_loss:
         best_loss = loss
         # 7. Save the MLM trained model for later use when a new best loss is achieved
         model.save_pretrained('./models/freq_mlm_trained_model')
+
+# 8. Print loss graph
+x = [i for i in range(0, len(loss_values_3))]
+y = loss_values_3
+# Create a line plot for loss
+plt.plot(x, y, marker='^', linestyle='-.', color='red')
+# Adding labels and title
+plt.xlabel('Epoch')
+plt.ylabel('Loss')
+plt.title('Loss Graph Over Epochs')
+# Display the plot
+plt.grid(True)
+plt.show()
