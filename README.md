@@ -5,29 +5,29 @@
 
 ## Bidirectional Encoder Representations from Transformers for using Korean Legal Text
 
-### 1. Model description
+## 1. Model description
 
 
 
-### 2. Model Usage
-#### Pre-train
+## 2. Model Usage
+### Pre-train
 Our model is pre-trained using four masking techniques: Statistical MLM, Dynamic MLM, Frequency MLM, and TSDAE.
 
-#### 1. Statistical Masked Language Model
+### 1. Statistical Masked Language Model
 
-#### 2. Dynamic Masked Language Model
+### 2. Dynamic Masked Language Model
 
-#### 3. Frequency-based Masked Language Model
+### 3. Frequency-based Masked Language Model
 
-#### 4. Transformer-based Sequential Denosing Auto-Encoder
+### 4. Transformer-based Sequential Denosing Auto-Encoder
 
-#### Fine-tuning
+### Fine-tuning
 
-#### 1. NIL
+### 1. NIL
 
-#### 2. STS
+### 2. STS
 
 
-### 3. Dev
+## 3. Dev
   - Seoul National University NLP Labs
   - Navy Lee
