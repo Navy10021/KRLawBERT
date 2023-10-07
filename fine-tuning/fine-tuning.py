@@ -19,7 +19,7 @@ print(">> Using {}".format(device))
 ################################
 from models.kor_sentence_bert import *
 # 1-1. Load pre-trained or re-trained KoLawBERT
-model_name = "models/tsdae"
+model_name = ./models/tsdae_trained_model
 token_name = "klue/bert-base"    # Kor : "klue/bert-base" Eng : "bert-base"
 model = make_sentenceBERT(model_name, token_name)
 
