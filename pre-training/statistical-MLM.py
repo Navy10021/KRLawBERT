@@ -31,7 +31,7 @@ model_name = 'bert-base-uncased'
 tokenizer = BertTokenizer.from_pretrained(model_name)
 model = BertForMaskedLM.from_pretrained(model_name)
 
-# 3. Statistical MLM
+# Statistical MLM
 class MLMPretrainingDataset(Dataset):
     def __init__(self, text_data, tokenizer):
         self.text_data = text_data
@@ -96,6 +96,7 @@ optimizer = optim.Adam(model.parameters(), lr=0.0005)
 # 6. Training loop
 epochs = 10
 best_loss = float('inf')  # Initialize the best_loss with positive infinity
+loss_values_1 = list()
 model.train()
 for epoch in range(epochs):
     for batch_masked_tokens, batch_labels in dataloader:
@@ -105,9 +106,23 @@ for epoch in range(epochs):
         loss.backward()
         optimizer.step()
     
+    loss_values_1.append(loss.item())
     print(f"Epoch {epoch + 1}/{epochs} - Loss : {loss.item()}")
 
+    # 7. Save the MLM trained model for later use when a new best loss is achieved
     if loss < best_loss:
         best_loss = loss
-        # 7. Save the MLM trained model for later use when a new best loss is achieved
         model.save_pretrained('./models/mlm_trained_model')
+
+# 8. Print loss graph
+x = [i for i in range(0, len(loss_values_1))]
+y = loss_values_1
+# Create a line plot for loss
+plt.plot(x, y, marker='o', linestyle='-', color='blue')
+# Adding labels and title
+plt.xlabel('Epoch')
+plt.ylabel('Loss')
+plt.title('Loss Graph Over Epochs')
+# Display the plot
+plt.grid(True)  # Add grid lines
+plt.show()
