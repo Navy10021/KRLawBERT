@@ -6,18 +6,18 @@
 ## Bidirectional Encoder Representations from Transformers for using Korean Legal Text
 
 ## 1. Model description
- **BERT (Bidirectional Encoder Representations from Transformers)** is a pre-trained large language model based on the Transformers encoder. We can use existing various BERT-based large language models. However, this way is less competitive in the field of legal information retrieval. Therefore, we release a ***KRLawBERT*** pre-trained on large-scale legal text dataset by benchmarking two popular techniques: Masked Language Modeling (MLM) and Transformer-based Sequential Denoising Auto-Encoder (TSDAE). In particular, to improve performance, KRLawBERT was lexicographically developed by applying various MLM approaches as follows.
+ **BERT (Bidirectional Encoder Representations from Transformers)** is a pre-trained large language model based on the Transformers encoder. We can use existing various BERT-based large language models. However, this way is less competitive in the field of legal information retrieval. Therefore, we release a ***KRLawBERT*** pre-trained on large-scale legal text dataset by benchmarking two popular techniques: **Masked Language Modeling (MLM)** and **Transformer-based Sequential Denoising Auto-Encoder (TSDAE)**. In particular, to improve performance, KRLawBERT was lexicographically developed by applying various MLM approaches as follows.
 
 
 ## 2. Model Usage
 ### Pre-train
 Our model is pre-trained using four masking techniques: Statistical MLM, Dynamic MLM, Frequency MLM, and TSDAE.
 
-### 1. Statistical Masked Language Model
+### 1. Statistical Masked Language Modeling
 
-### 2. Dynamic Masked Language Model
+### 2. Dynamic Masked Language Modeling
 
-### 3. Frequency-based Masked Language Model
+### 3. Frequency-based Masked Language Modeling
 
 ### 4. Transformer-based Sequential Denosing Auto-Encoder
 
