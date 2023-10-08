@@ -14,21 +14,21 @@
 Our model is pre-trained using four masking techniques: **Statistical MLM**, **Dynamic MLM**, **Frequency MLM**, and **TSDAE**.
 
 ### 1. Statistical Masked Language Modeling
-**Statistical Masked Language Modeling** implemented a pretraining script for training a masked language model (MLM) using the BERT architecture with PyTorch and Hugging Face's Transformers library. This code trains the original MLM on a custom dataset. Overall, this script trains a BERT-based MLM on a custom dataset and saves the model with the best loss during training. You can use this trained MLM model for downstream tasks such as text generation, text classification, or any task that benefits from pre-trained language representations.
+**Statistical Masked Language Modeling** implemented a pretraining script for training a **masked language model (MLM) using the BERT architecture** with PyTorch and Hugging Face's Transformers library. This code trains the original MLM on a custom dataset. Overall, this script trains a BERT-based MLM on a custom dataset and saves the model with the best loss during training. You can use this trained MLM model for downstream tasks such as text generation, text classification, or any task that benefits from pre-trained language representations.
 
 ```python
 $ python pre-training/statistical-MLM.py
 ```
 
 ### 2. Dynamic Masked Language Modeling
-**Dynamic Masked Language Modeling** implemented a dynamic masked language model (MLM) pretraining script using the BERT architecture with PyTorch and the Transformers library. This script uses a custom dataset and a dynamic masking strategy similar to RoBERTa. This dynamic MLM training strategy is designed to help the model adapt better to downstream tasks by exposing it to more diverse masked tokens during pretraining. You can choose between the two strategies(statistical or dynamic) based on your specific use case and evaluation results.
+**Dynamic Masked Language Modeling** implemented a dynamic masked language model (MLM) pretraining script using the BERT architecture with PyTorch and the Transformers library. This script uses a custom dataset and **a dynamic masking strategy similar to RoBERTa**. This dynamic MLM training strategy is designed to help the model adapt better to downstream tasks by exposing it to more diverse masked tokens during pretraining. You can choose between the two strategies(statistical or dynamic) based on your specific use case and evaluation results.
 
 ```python
 $ python pre-training/dynamic-MLM.py
 ```
 
 ### 3. Frequency-based Masked Language Modeling
-**Frequency-based Masked Language Modeling** implemented a frequency-based masked language model (MLM) pretraining script using the BERT architecture with PyTorch and the Transformers library. This script uses a custom dataset and an advanced masking strategy based on token frequency. You now have three different MLM pretraining strategies (statistical, dynamic, and frequency-based) that you can choose from based on your specific use case and evaluation results. Each strategy exposes the model to different training data patterns, which may be beneficial for different downstream tasks.
+**Frequency-based Masked Language Modeling** implemented a frequency-based masked language model (MLM) pretraining script using the BERT architecture with PyTorch and the Transformers library. This script uses a custom dataset and **an advanced masking strategy based on token frequency**. You now have three different MLM pretraining strategies (statistical, dynamic, and frequency-based) that you can choose from based on your specific use case and evaluation results. Each strategy exposes the model to different training data patterns, which may be beneficial for different downstream tasks.
 
 ```python
 $ python pre-training/frequency-MLM.py
