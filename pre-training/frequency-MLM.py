@@ -125,7 +125,8 @@ for epoch in range(epochs):
 x = [i for i in range(0, len(loss_values_3))]
 y = loss_values_3
 # Create a line plot for loss
-plt.plot(x, y, marker='^', linestyle='-.', color='red')
+plt.plot(x, y, marker='^', linestyle='-.', color='red',label='frequency-MLM')
+plt.legend()
 # Adding labels and title
 plt.xlabel('Epoch')
 plt.ylabel('Loss')
