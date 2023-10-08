@@ -17,7 +17,7 @@ Our model is pre-trained using four masking techniques: **Statistical MLM**, **D
 Statistical Masked Language Modeling implemented a pretraining script for training a masked language model (MLM) using the BERT architecture with PyTorch and Hugging Face's Transformers library. This code trains the original MLM on a custom dataset. Overall, this script trains a BERT-based MLM on a custom dataset and saves the model with the best loss during training. You can use this trained MLM model for downstream tasks such as text generation, text classification, or any task that benefits from pre-trained language representations.
 
 ```python
-$ python pre-train/statistical-MLM.py
+$ python pre-training/statistical-MLM.py
 ```
 
 ### 2. Dynamic Masked Language Modeling
