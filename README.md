@@ -35,6 +35,10 @@ $ python pre-training/frequency-MLM.py
 ```
 
 ### 4. Transformer-based Sequential Denosing Auto-Encoder
+Transformer-based Sequential Denosing Auto-Encoder introduces noise to input sequences by deleting or swapping tokens. These damaged sentences are encoded by the transformer model into sentence vectors. Another decoder network then attempts to reconstruct the original input from the damaged sentence encoding. This may seem similar to masked-language modeling (MLM). MLM is the most common pretraining approach for transformer models. A random number of tokens are masked using a ‘masking token’, and the transformer must try to guess what is missing, like a ‘fill in the blanks’ test in school. TSDAE differs in that the decoder in MLM has access to full-length word embeddings for every single token. The TSDAE decoder only has access to the sentence vector produced by the encoder.
+```python
+$ python pre-training/TSDAE.py
+```
 
 ### Fine-tuning
 
