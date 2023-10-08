@@ -82,7 +82,7 @@ criterion = torch.nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=1e-5)
 
 # 6. Training loop
-epochs = 10
+epochs = 100
 best_loss = float('inf')  # Initialize the best_loss with positive infinity
 loss_values_2 = list()
 model.train()
@@ -107,7 +107,8 @@ for epoch in range(epochs):
 x = [i for i in range(0, len(loss_values_2))]
 y = loss_values_2
 # Create a line plot for loss
-plt.plot(x, y, marker='s', linestyle='--', color='green')
+plt.plot(x, y, marker='o', linestyle='-', color='blue', label='statistical-MLM')
+plt.legend()
 # Adding labels and title
 plt.xlabel('Epoch')
 plt.ylabel('Loss')
