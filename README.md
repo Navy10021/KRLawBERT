@@ -44,7 +44,8 @@ You now have three different MLM(statistical, dynamic, and frequency-based) and 
 ```python
 $ python pre-training/loss_visualization.py
 ```
-![Masking_Loss](https://github.com/Navy10021/KRLawBERT/assets/105137667/86bfc303-4efd-46e3-853a-0d5ad43c53f1){: .center} 
+
+<center><img src="/img/myImg.png" width="300" height="300"></center>
 
 
 ### Fine-tuning
