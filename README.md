@@ -45,7 +45,7 @@ You now have three different MLM(statistical, dynamic, and frequency-based) and 
 $ python pre-training/train_loss_graph.py
 ```
 
-<center><img src="/img/train_loss_graph.png" width="300" height="300"></center>
+<center><img src="/pre-training/train_loss_graph.png" width="300" height="300"></center>
 
 
 ### Fine-tuning
