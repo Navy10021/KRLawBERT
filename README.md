@@ -42,10 +42,10 @@ $ python pre-training/TSDAE.py
 
 You now have three different MLM(statistical, dynamic, and frequency-based) and TSDAE pre-training strategies that you can choose from based on your specific use case and evaluation results. Each strategy exposes the model to different training data patterns, which may be beneficial for different downstream tasks. The experimental results show that among MLM methods, the frequency MLM we designed is the most stable learning method. The TSDAE method is also a good option for BERT pre-training.
 ```python
-$ python pre-training/loss_visualization.py
+$ python pre-training/train_loss_graph.py
 ```
 
-<center><img src="/img/myImg.png" width="300" height="300"></center>
+<center><img src="/img/train_loss_graph.png" width="300" height="300"></center>
 
 
 ### Fine-tuning
