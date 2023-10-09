@@ -50,7 +50,7 @@ $ python pre-training/train_loss_graph.py
 
 ### Fine-tuning
 
- Two tasks(NIL and STS) are additionally performed to make our KRLawBERT semantic meaningful language model.
+ Two popular tasks(NIL and STS) in NLP are additionally performed to make our KRLawBERT semantic meaningful language model.
 ```python
 $ python fine-tuning/fine_tuning.py
 ```
