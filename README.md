@@ -10,7 +10,7 @@
 
 
 ## 2. Model Usage
-### Pre-training
+## Pre-training
 Our model is pre-trained using four masking techniques: **Statistical MLM**, **Dynamic MLM**, **Frequency MLM**, and **TSDAE**.
 
 ### 1. Statistical Masked Language Modeling
@@ -48,7 +48,7 @@ $ python pre-training/train_loss_graph.py
 <p align="center"><img src="./pre-training/train_loss_graph.png" width="65%" height="50%"></p>
 
 
-### Fine-tuning
+## Fine-tuning
 
  To adapt the **KRLawBERT** to produce semantic legal embeddings, it needs a more supervised fine-tuning approach. We fine-tune KRLawBERT on the following three datasets: 1) **Natural language inference (NLI) pairs**; 2) **semantic textual similarity (STS)**; 3) **parallel legal data**.
 ```python
