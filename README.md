@@ -50,7 +50,7 @@ $ python pre-training/train_loss_graph.py
 
 ### Fine-tuning
 
- Two popular tasks(NIL and STS) in NLP are additionally performed to make our KRLawBERT semantic meaningful language model.
+ To adapt the **KRLawBERT** to produce semantic legal embeddings, it needs a more supervised fine-tuning approach. We fine-tune KRLawBERT on the following three datasets: 1) **Natural language inference (NLI) pairs**; 2) **semantic textual similarity (STS)**; 3) **parallel legal data**.
 ```python
 $ python fine-tuning/fine_tuning.py
 ```
