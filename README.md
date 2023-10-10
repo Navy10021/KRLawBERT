@@ -10,31 +10,31 @@
 
 
 ## 2. Model Usage
-## Pre-training
+### Pre-training
 Our model is pre-trained using four masking techniques: **Statistical MLM**, **Dynamic MLM**, **Frequency MLM**, and **TSDAE**.
 
-### 1. Statistical Masked Language Modeling
+#### 1. Statistical Masked Language Modeling
 **Statistical Masked Language Modeling** implemented a pretraining script for training a **masked language model (MLM) using the BERT architecture** with PyTorch and Hugging Face's Transformers library. This code trains the original MLM on a custom dataset. Overall, this script trains a BERT-based MLM on a custom dataset and saves the model with the best loss during training. Users can set the masking ratio. According to the BERT paper, performance is excellent at a ratio of 15%, and experimental results of our model show good learning ability of the model between **15-20%**. You can use this trained MLM model for downstream tasks such as text classification, text search, or any task that benefits from pre-trained language representations. 
 
 ```python
 $ python pre-training/statistical-MLM.py
 ```
 
-### 2. Dynamic Masked Language Modeling
+#### 2. Dynamic Masked Language Modeling
 **Dynamic Masked Language Modeling** implemented a dynamic masked language model (MLM) pretraining script using the BERT architecture with PyTorch and the Transformers library. This script uses a custom dataset and **a dynamic masking strategy similar to RoBERTa**. This dynamic MLM training strategy is designed to help the model adapt better to downstream tasks by exposing it to more diverse masked tokens during pretraining. Dynamic MLM also allows users to set the masking percentage within the code we provide.
 
 ```python
 $ python pre-training/dynamic-MLM.py
 ```
 
-### 3. Frequency-based Masked Language Modeling
+#### 3. Frequency-based Masked Language Modeling
 **Frequency-based Masked Language Modeling** implemented a frequency-based masked language model (MLM) pre-training script using the BERT architecture with PyTorch and the Transformers library. This script uses a custom dataset and **an advanced masking strategy based on token frequency**. Frequency MLM is designed to increase the concentration of training by increasing the MLM learning rate for tokens with high frequency, and the user can set the rate.
 
 ```python
 $ python pre-training/frequency-MLM.py
 ```
 
-### 4. Transformer-based Sequential Denosing Auto-Encoder
+#### 4. Transformer-based Sequential Denosing Auto-Encoder
 **Transformer-based Sequential Denosing Auto-Encoder(TSDAE)** introduces noise to input sequences by deleting or swapping tokens. These damaged sentences are encoded by the transformer model into sentence vectors. Another decoder network then attempts to reconstruct the original input from the damaged sentence encoding. This may seem similar to masked-language modeling (MLM). MLM is the most common pretraining approach for transformer models. **TSDAE** differs in that the decoder in **MLM** has access to full-length word embeddings for **every single token**. The **TSDAE** decoder only has access to the **sentence vector** produced by the encoder.
 ```python
 $ python pre-training/TSDAE.py
@@ -48,7 +48,7 @@ $ python pre-training/train_loss_graph.py
 <p align="center"><img src="./pre-training/train_loss_graph.png" width="65%" height="50%"></p>
 
 
-## Fine-tuning
+### Fine-tuning
 
  To adapt the **KRLawBERT** to produce semantic legal embeddings, it needs a more supervised fine-tuning approach. We fine-tune KRLawBERT on the following three datasets: 1) **Natural language inference (NLI) pairs**; 2) **semantic textual similarity (STS)**; 3) **parallel legal data**.
 ```python
