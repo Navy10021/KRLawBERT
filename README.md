@@ -57,6 +57,6 @@ $ python fine-tuning/fine_tuning.py
  
 
 
-## 3. Dev
-  - Seoul National University NLP Labs
-  - Navy Lee
+## 3. Development
+- Seoul National University NLP Labs
+- Under the guidance of Navy Lee
