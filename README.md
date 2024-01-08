@@ -3,15 +3,22 @@
 <img src="https://img.shields.io/badge/BERT-f7e600?style=flat-square&logo=Gitee&logoColor=black"/> <img src="https://img.shields.io/badge/Python-f7e600?style=flat-square&logo=Python&logoColor=black"/> <img src="https://img.shields.io/badge/Colab-f7e600?style=flat-square&logo=Google Colab&logoColor=black"/> 
 
 
-## Bidirectional Encoder Representations from Transformers for using Korean Legal Text
+## KRLawBERT : A Tailored BERT Model for Korean Legal Texts
+
+## Abstract :
+In this work, we presents the development and utilization of ***KRLawBERT***, a specialized variant of **BERT (Bidirectional Encoder Representations from Transformers)**, designed for the intricate domain of Korean legal texts. ***KRLawBERT*** is pre-trained on a large-scale legal text dataset, employing innovative techniques such as **Masked Language Modeling (MLM)** and **Transformer-based Sequential Denoising Auto-Encoder (TSDAE)** to enhance its performance in legal information retrieval. The research provides a comprehensive guide on the pre-training of ***KRLawBERT*** using various masking strategies and its subsequent fine-tuning on datasets tailored to legal semantics.
 
 ## 1. Model description
- **BERT (Bidirectional Encoder Representations from Transformers)** is a pre-trained large language model based on the Transformers encoder. We can use existing various BERT-based large language models. However, this way is less competitive in the field of legal information retrieval. Therefore, we release a ***KRLawBERT*** pre-trained on large-scale legal text dataset by benchmarking two popular techniques: **Masked Language Modeling (MLM)** and **Transformer-based Sequential Denoising Auto-Encoder (TSDAE)**. In particular, to improve performance, KRLawBERT was lexicographically developed by applying **various MLM approaches** as follows.
 
+### 1.1. Introduction to KRLawBERT
+***KRLawBERT*** is introduced as a specialized BERT model tailored for Korean legal texts. It is pre-trained on a large-scale legal text dataset, and its development includes the application of advanced techniques such as MLM and TSDAE to improve its competitive edge in the field of legal information retrieval.
+
+### 1.2. Lexicographical Development of KRLawBERT
+ Our research delves into the lexicographical development of ***KRLawBERT***, detailing the application of various MLM approaches to enhance its performance. Four masking techniques—Statistical MLM, Dynamic MLM, Frequency MLM, and TSDAE—are employed to adapt the model to the nuances of the Korean legal language.
 
 ## 2. Model Usage
-### Pre-training
-Our model is pre-trained using four masking techniques: **Statistical MLM**, **Dynamic MLM**, **Frequency MLM**, and **TSDAE**.
+### Pre-training KRLawBERT on Specific Text Data
+The pre-training of ***KRLawBERT*** is explicated through the implementation of four masking strategies: Statistical MLM, Dynamic MLM, Frequency MLM, and TSDAE. Each approach exposes the model to different training data patterns, catering to diverse downstream tasks. Users are provided with a step-by-step guide for executing these pre-training strategies.
 
 #### 1. Statistical Masked Language Modeling
 **Statistical Masked Language Modeling** implemented a pretraining script for training a **masked language model (MLM) using the BERT architecture** with PyTorch and Hugging Face's Transformers library. This code trains the original MLM on a custom dataset. Overall, this script trains a BERT-based MLM on a custom dataset and saves the model with the best loss during training. Users can set the masking ratio. According to the BERT paper, performance is excellent at a ratio of 15%, and experimental results of our model show good learning ability of the model between **15-20%**. You can use this trained MLM model for downstream tasks such as text classification, text search, or any task that benefits from pre-trained language representations. 
@@ -48,15 +55,16 @@ $ python pre-training/train_loss_graph.py
 <p align="center"><img src="./pre-training/train_loss_graph.png" width="65%" height="50%"></p>
 
 
-### Fine-tuning
+### Fine-tuning KRLawBERT for Legal Information Retrieval
 
- To adapt the **KRLawBERT** to produce semantic legal embeddings, it needs a more supervised fine-tuning approach. We fine-tune KRLawBERT on the following three datasets: 1) **Natural language inference (NLI) pairs**; 2) **semantic textual similarity (STS)**; 3) **parallel legal data**.
+ To adapt ***KRLawBERT*** for legal information retrieval, the model undergoes a supervised fine-tuning process on three distinct datasets: **Natural Language Inference (NLI)** pairs, **Semantic Textual Similarity (STS)**, and parallel legal data. This fine-tuning approach ensures that ***KRLawBERT*** produces semantic legal embeddings tailored to the specific requirements of the legal domain.
 ```python
 $ python fine-tuning/fine_tuning.py
 ```
- 
 
+## 3. Conclusion
+In summary, this work contributes a specialized **BERT** model, ***KRLawBERT***, designed to excel in the domain of Korean legal texts. Through advanced pre-training and fine-tuning strategies, ***KRLawBERT*** aims to elevate the accuracy and effectiveness of legal information retrieval systems.
 
-## 3. Development
+## 4. Development
 - Seoul National University NLP Labs
 - Under the guidance of Navy Lee
