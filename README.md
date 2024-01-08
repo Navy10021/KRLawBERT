@@ -16,8 +16,10 @@ In this work, we presents the development and utilization of ***KRLawBERT***, a 
 ### 1.2. Lexicographical Development of KRLawBERT
  Our research delves into the lexicographical development of ***KRLawBERT***, detailing the application of various MLM approaches to enhance its performance. Four masking techniques—Statistical MLM, Dynamic MLM, Frequency MLM, and TSDAE—are employed to adapt the model to the nuances of the Korean legal language.
 
+
 ## 2. Model Usage
-### Pre-training KRLawBERT on Specific Text Data
+
+### 2.1. Pre-training KRLawBERT on Specific Text Data
 The pre-training of ***KRLawBERT*** is explicated through the implementation of four masking strategies: Statistical MLM, Dynamic MLM, Frequency MLM, and TSDAE. Each approach exposes the model to different training data patterns, catering to diverse downstream tasks. Users are provided with a step-by-step guide for executing these pre-training strategies.
 
 #### 1. Statistical MLM (Statistical Masked Language Modeling)
@@ -55,7 +57,7 @@ $ python pre-training/train_loss_graph.py
 <p align="center"><img src="./pre-training/train_loss_graph.png" width="65%" height="50%"></p>
 
 
-### Fine-tuning KRLawBERT for Legal Information Retrieval
+### 2.2. Fine-tuning KRLawBERT for Legal Information Retrieval
 
  To adapt ***KRLawBERT*** for legal information retrieval, the model undergoes a supervised fine-tuning process on three distinct datasets: **Natural Language Inference (NLI)** pairs, **Semantic Textual Similarity (STS)**, and parallel legal data. This fine-tuning approach ensures that ***KRLawBERT*** produces semantic legal embeddings tailored to the specific requirements of the legal domain.
 ```python
