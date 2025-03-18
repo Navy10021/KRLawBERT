@@ -16,7 +16,7 @@ In this work, we presents the development and utilization of ***KRLawBERT***, a 
 ### 1.2. Lexicographical Development of KRLawBERT
  Our research delves into the lexicographical development of ***KRLawBERT***, detailing the application of various MLM approaches to enhance its performance. Four masking techniques—Statistical MLM, Dynamic MLM, Frequency MLM, and TSDAE—are employed to adapt the model to the nuances of the Korean legal language.
 
- ![KRLawBERT](https://github.com/user-attachments/assets/4987dd3d-3a59-41e1-98fa-0ca315723657)
+![KRLawBERT](https://github.com/user-attachments/assets/a7c484f0-0da1-4a0f-a728-b2262a637188)
 
 
 
